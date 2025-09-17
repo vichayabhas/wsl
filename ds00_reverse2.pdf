@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CEDT Grader</title>
+<link rel="stylesheet" href="/assets/application-00b90afd00b3a0f0d90e613293cb3cb6fff42d980f1cc6325a6c2ff257a98297.css" media="all" />
+<link rel="stylesheet" href="/assets/main-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css" media="all" />
+<link rel="stylesheet" href="/assets/datatables/datatables-new.min-ad277d97cf6c8c602ed47dfcff8c3e096d63818da6e5ee6a3fc51c40d4bb7684.css" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="za3cz27VZC0KH0zSU7HDK_bf8qUPChHPtn_euueT_AuG6JP2jbQeQaEypcT1HYa2N9HFaSN9QKShoJ7_ztc7ZA" />
+
+<script src="/assets/my_app-30cabe6b70d9e8fb3f8dbb9167f05261d035aaf2ab6803db5125185d03434cc2.js"></script>
+<script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-109a25f13c3e9204f4769dd7e5c568164b0cb4e653e9706afe43d27e05c8b140.js",
+    "prepend_jquery": "/assets/prepend_jquery-def10a9cf4361dcfd994aa4e41c82c8b22c36fb45f307732d56ff188aa0d1a14.js",
+    "datatables": "/assets/datatables/datatables.min-14162f65fca4291ac735770c65f21277e6bd6480615b6dfaa033697bbc0c8ec8.js",
+    "vfs-fonts": "/assets/datatables/vfs_fonts-751cccfa374998d9609f52d345fa59d109209fdd3ba506e37f407b74b7847c2d.js",
+    "pdfmake": "/assets/datatables/pdfmake.min-2b7459ccac2a5c173490001007f72751f217275d4653544c65f4c3c12053a6e5.js",
+    "select2": "/assets/select2.min-79da6ba9675930db638cf9590a381f74fe7c96abae352665b17ff918169ce121.js",
+    "cafe_bundle": "/assets/cafe_bundle-68ade22ae027c45eac635a64d00522cd73cff19adc1aa9d5b25ecddc0d9c73a0.js",
+    "cafe": "/assets/cafe-440dc4cb83d974f68f341de3245535873bb0f80b4af1d7f50f472766889a668f.js",
+    "cafe_event": "/assets/cafe_event-35530b18ae546c4d744a13052f36b47c7d2799102af5eb999a5003051372a869.js",
+    "cafe_datatable": "/assets/cafe_datatable-7abd2ac0b4d4a7e75b94510bf93d9c5e6c880760d2d184d47061cd17dda95404.js",
+    "chart": "/assets/chart.umd-0e342e5a1d63e9d2e6e129f1563095dfb635434c67a347b7283cf5d315afd69d.js",
+    "tempus-dominus-esm": "/assets/tempus-dominus/tempus-dominus.esm-3043f1706165589901adac2acd8e8c333939be206fac7619a37b6a745a1823f9.js",
+    "tempus-dominus-js": "/assets/tempus-dominus/tempus-dominus-0e737a637a1c72f6b3977789e7a3e0302116e588f134319ae0274f9731545d37.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-d03cf1dff41d6c5698ec2c5d6a501615a7a33754dbeef8d1edd31c928d17c652.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-eef6d0d72563b8765529b3f72bffff1fb8dcdd7f6a0eb025a2478c06e030d1cf.js",
+    "rails-ujs": "/assets/rails-ujs.esm-8fbd650218b6b146a78aa5d7d6cd8eb8d9da87cc6d504aab7fc3c6b64e94d34b.js",
+    "controllers/announcement_controller": "/assets/controllers/announcement_controller-661a8969a8af8af9c4d873ad8901c27fc4aeb79c45cf108c782abc0617137650.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/contest_controller": "/assets/controllers/contest_controller-8e2b1383646538426fd4dc4280e77f4fddcd72848173f7b9810450959ee7598e.js",
+    "controllers/group_controller": "/assets/controllers/group_controller-8ab793c1ef56159559e7a191acd7db9c9d91aeaab58478cc24edc559f406689b.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-b3afba397b5d8027eddb8dfe7e9693a6959f54a9bb6cb873c2ca7d4ba360928c.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/main_controller": "/assets/controllers/main_controller-dfd2a156d9061a1cd91d53fc56c6b3a24a3f6adce74e4e4c830bc9e15a21e9e4.js",
+    "controllers/problem_controller": "/assets/controllers/problem_controller-eadad4b4ee8697cb7ff181053e0d60602e1ee05251321519f32db26d20a00d04.js",
+    "controllers/tag_controller": "/assets/controllers/tag_controller-a8876227083518d89e191873509c6b11b3d3be34e1cefb737492a7dac3eec424.js",
+    "mixins/row_field_toggle": "/assets/mixins/row_field_toggle-bddd8f8c470110ea108b847a52ef4077a783eae32b5aa3eacaacca717b999e77.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/stimulus.min-d03cf1dff41d6c5698ec2c5d6a501615a7a33754dbeef8d1edd31c928d17c652.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js">
+<link rel="modulepreload" href="/assets/turbo.min-eef6d0d72563b8765529b3f72bffff1fb8dcdd7f6a0eb025a2478c06e030d1cf.js">
+<script src="/assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+
+
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-controller='main'>
+<!-- = content_tag(:p,flash[:notice],class: 'alert alert-success') if flash[:notice]!=nil -->
+<div class='container-fluid' id='main-content'>
+<div class='alert alert-dismissible my-2 fade show alert-danger'>
+You need to log in
+<button class='btn-close' data-bs-dismiss='alert' type='button'></button>
+</div>
+<h1>CEDT Grader</h1>
+<div class='row mt-4'>
+<div class='col-md-6 col-sm-12'>
+</div>
+<div class='col-lg-4 col-md-6 col-sm-12' style='padding-left: 20px;'>
+<div class='card'>
+<div class='card-body'>
+<div class='card-title'>
+<h3>Stay calm, keep coding</h3>
+</div>
+<div class='card-subtitle'>Please login to see the problem list</div>
+<div class='card'>
+<div class='card-body' style='background: #eeeeff;'>
+<form action="/login/login" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="PTs3qkQOvOXc5EKkDrOAxcIDZzxHCqb8DbR5j0GxUYJwZB7OXpAhnS-faDSnfuKwV1H_LfnP23PXZpv94i2utg" autocomplete="off" /><div class='mb-3'>
+<label class="form-label" for="login">Login</label>
+<input class="form-control" type="text" name="login" id="login" />
+</div>
+<div class='mb-3'>
+<label class="form-label" for="password">Password</label>
+<input class="form-control" type="password" name="password" id="password" />
+</div>
+<div class='mb-3'>
+<div class='col-sm-offset-3 col-sm-9'>
+<input type="submit" name="commit" value="Login" class="btn btn-primary" data-disable-with="Login" />
+</div>
+</div>
+</form></div>
+</div>
+<br>
+</div>
+</div>
+
+current ip is 161.200.190.153
+</div>
+</div>
+
+</div>
+<turbo-frame data-turbo="true" id="msg_modal_main"></turbo-frame>
+<turbo-frame data-turbo="true" id="toast_main"><div class='toast-container position-fixed top-0 end-0 p-3' id='toast-area'>
+<!-- place holder -->
+</div>
+</turbo-frame><turbo-frame data-turbo="true" id="js_response"><div id='js-response'>
+<!-- place holder -->
+</div>
+</turbo-frame></body>
+</html>
